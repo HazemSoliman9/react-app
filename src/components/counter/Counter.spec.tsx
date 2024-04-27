@@ -25,6 +25,8 @@ describe('Counter', () => {
 
     const countValue = screen.getByText('42')
     expect(countValue).toBeInTheDocument()
+    // const pTagWithText = screen.queryByText('hazem')
+    // expect(pTagWithText).toBeInTheDocument()
   })
 
   test('should be possible to increment counter.', () => {
