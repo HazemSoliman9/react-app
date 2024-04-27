@@ -16,10 +16,7 @@ const Counter: React.FC = () => {
               <h4>
                 Counter: <strong>{count}</strong>
               </h4>
-              <p>
-                Here you can increment and decrement counter value using buttons
-                below. All the state updates are performed via redux actions.
-              </p>
+              <p>build 5.</p>
             </div>
             <div className="card-action">
               <div className="group">
