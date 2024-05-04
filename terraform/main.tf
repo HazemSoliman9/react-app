@@ -13,4 +13,9 @@ resource "aws_instance" "UbuntuInstance" {
     tags = {
     name = "Ubuntu-Server-Instance"
   }
+    root_block_device {
+    volume_size = 30
+    volume_type = "gp2"
+    encrypted   = false
+  }
 }
