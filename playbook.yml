@@ -19,3 +19,6 @@
 
     - name: push image to dockerhub
       command: docker push hazemsoliman9/react-app
+
+    - name: run container from image
+      command: docker run -d -p 3000:3000 hazemsoliman9/react-app
