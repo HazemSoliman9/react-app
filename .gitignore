@@ -31,3 +31,4 @@ terraform.tfstate.backup
 
 .terraform.lock.hcl
 terraform/ubuntu-key-pair.pem
+terraform/terraform.tfstate
