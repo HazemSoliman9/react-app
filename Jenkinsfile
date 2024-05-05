@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('Build Start Notification') {
             steps {
-                slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                script {
+                    slackSend( message: "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)")
+                }
             }
         }
         
