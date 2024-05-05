@@ -3,11 +3,11 @@
   hosts: localhost
   tasks:
     - name: stop running container
-      command: docker stop hazemsoliman9/react-app
+      command: docker stop react_app_container
       ignore_errors: yes
 
     - name: remove stopped container
-      command: docker rm hazemsoliman9/react-app
+      command: docker rm react_app_container
       ignore_errors: yes
 
     - name: remove used image
@@ -21,4 +21,4 @@
       command: docker push hazemsoliman9/react-app
 
     - name: run container from image
-      command: docker run -d -p 3000:3000 --name hazemsoliman9/react-app hazemsoliman9/react-app
+      command: docker run -d -p 3000:3000 --name react_app_container hazemsoliman9/react-app
