@@ -35,13 +35,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "fix": "eslint src --ext .js,.jsx,.ts,.tsx  --fix",
     "e2e": "cypress run",
-    "teste2e": "run-p --race start e2e"
+    "teste2e": "run-p --race start:dev e2e"
   },
   "eslintConfig": {
     "extends": "react-app"
