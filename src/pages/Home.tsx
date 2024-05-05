@@ -5,7 +5,7 @@ export const Home: React.FC = () => {
   return (
     <Fragment>
       <h1>Redux + TypeScript</h1>
-      <p>testing </p>
+      <p>testing 1</p>
       <Counter />
     </Fragment>
   )
