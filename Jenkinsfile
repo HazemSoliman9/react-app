@@ -5,6 +5,11 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
+        stage('Build Start Notification') {
+            steps {
+                slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+            }
+        }
         
         stage('Test'){
             steps {
@@ -38,6 +43,16 @@ pipeline {
             steps {
                 sh 'ansible-playbook playbook.yml'
             }
+        }
+    }
+    post {
+        success {
+            // Send notification for successful build
+            slackSend(color: 'good', message: "Build successful: ${currentBuild.fullDisplayName}")
+        }
+        failure {
+            // Send notification for failed build
+            slackSend(color: 'danger', message: "Build failed: ${currentBuild.fullDisplayName}")
         }
     }
 }
